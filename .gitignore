@@ -1,0 +1,37 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Mac system files
+.DS_Store
+
+# Tailwind generated files (si usas purge o JIT)
+*.css.map
+
+# Optional: coverage reports (si usas testing)
+coverage/
