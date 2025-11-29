@@ -20,9 +20,9 @@ export default function PrizePopup({ prize, isOpen, onClose }: PrizePopupProps) 
           color: wheelTheme.popup.textColor
         }}
       >
-        <h2 className="text-2xl font-bold mb-3">
+        {/* <h2 className="text-2xl font-bold mb-3">
           Congratulations!
-        </h2>
+        </h2> */}
 
         <p className="text-lg font-semibold mb-6">
           {prize}

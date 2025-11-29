@@ -4,22 +4,23 @@ export const wheelTheme = {
   backgroundImage: "/images/bg-xmas2.jpg", 
 
    // ----- WHEEL -----
-  wheelOptions: [
-    "Try again",
-    "5% OFF any purchase",
-    "$10 OFF",
-    "10% OFF human hair",
+wheelOptions: [
+  { option: "Try again", weight: 25 },
 
-    "Better luck next time",
-    "$5 OFF products",
-    "$15 OFF",
-    "15% OFF synthetic hair",
+  { option: "10% OFF any purchase", weight: 12 },
+  { option: "$10 OFF", weight: 12 },
+  { option: "10% OFF human hair", weight: 5 },
 
-    "Not today, beauty",
-    "FREE RANDOM GIFT",
-    "$20 OFF",
-    "20% OFF any purchase",
-  ],
+  { option: "Better luck next time", weight: 10 },
+  { option: "15% OFF any purchase", weight: 8 },
+  { option: "$15 OFF", weight: 8 },
+  { option: "15% OFF synthetic hair", weight: 6 },
+
+  { option: "Not today, beauty", weight: 10 },
+  { option: "FREE RANDOM GIFT", weight: 5 },
+  { option: "$20 OFF", weight: 3 },
+  { option: "20% OFF any purchase", weight: 3 },
+],
   
   // ----- HEADER/FOOTER -----
   header: {

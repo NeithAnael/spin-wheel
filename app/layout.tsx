@@ -10,6 +10,10 @@
 // export const metadata = {
 //   title: "Spin Wheel",
 //   description: "Promotional prize wheel for salons and businesses",
+//   owner: {
+//      name: "Neith Anael Islas Rojas",
+//      url: "https://github.com/NeithAnael",
+// //   },
 // };
 
 // export default function RootLayout({ children }) {

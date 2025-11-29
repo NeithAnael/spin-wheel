@@ -1,34 +1,3 @@
-// // App.tsx
-// import Wheel from './components/MyWheel';
-// import Header from './components/Header';
-// import Footer from './components/Footer';
-// import { wheelTheme } from '@/components/theme/wheelTheme';
-
-// export default function App() {
-//   return (
-//     <div className="min-h-screen flex flex-col">
-//       <Header />
-
-//       <main className="flex-1 flex items-center justify-center relative p-4">
-//         {/* Fondo usando el theme */}
-//         <div
-//           className="absolute inset-0 bg-cover bg-center"
-//           style={{
-//             backgroundImage: `url(${wheelTheme.backgroundImage})`,
-//             opacity: 0.5,
-//           }}
-//         />
-
-//         <div className="relative z-10 w-full max-w-lg aspect-square p-4">
-//           <Wheel />
-//         </div>
-//       </main>
-
-//       <Footer />
-//     </div>
-//   );
-// }
-
 import Wheel from './components/MyWheel';
 import Header from './components/Header';
 import Footer from './components/Footer';

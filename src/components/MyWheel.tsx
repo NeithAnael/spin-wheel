@@ -6,10 +6,13 @@ import { wheelTheme } from "@/components/theme/wheelTheme";
 
 interface WheelOption {
   option: string;
+  weight?: number; // Nuevo: peso opcional
 }
 
-const data = wheelTheme.wheelOptions.map((option, index) => ({
-  option,
+// Convertimos wheelTheme.wheelOptions en formato con estilo
+const data = wheelTheme.wheelOptions.map((item: any, index: number) => ({
+  option: typeof item === "string" ? item : item.option,
+  weight: typeof item === "string" ? 1 : item.weight ?? 1, // peso por defecto 1
   style: {
     backgroundColor:
       wheelTheme.wheelColors.backgroundColors[
@@ -22,6 +25,18 @@ const data = wheelTheme.wheelOptions.map((option, index) => ({
   },
 }));
 
+// Función para elegir índice basado en peso
+function getWeightedRandomIndex(items: { weight: number }[]) {
+  const totalWeight = items.reduce((sum, item) => sum + item.weight, 0);
+  let random = Math.random() * totalWeight;
+
+  for (let i = 0; i < items.length; i++) {
+    if (random < items[i].weight) return i;
+    random -= items[i].weight;
+  }
+  return 0; // fallback
+}
+
 export default function CenteredWheel() {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
@@ -31,7 +46,7 @@ export default function CenteredWheel() {
   const [currentPrize, setCurrentPrize] = useState("");
 
   const handleSpinClick = () => {
-    const newPrizeNumber = Math.floor(Math.random() * data.length);
+    const newPrizeNumber = getWeightedRandomIndex(data);
     setPrizeNumber(newPrizeNumber);
     setMustSpin(true);
   };
@@ -53,7 +68,6 @@ export default function CenteredWheel() {
               prizeNumber={prizeNumber}
               data={data}
               onStopSpinning={handleStopSpinning}
-              // Colors imported from the theme
               backgroundColors={wheelTheme.wheelColors.backgroundColors}
               textColors={wheelTheme.wheelColors.textColors}
               outerBorderColor={wheelTheme.wheelColors.borderColor}
