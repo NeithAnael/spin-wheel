@@ -19,15 +19,15 @@ You can see the project running here:
 
 Clone the repository:
 
-git clone https://github.com/NeithAnael/spin-wheel.git
+  git clone https://github.com/NeithAnael/spin-wheel.git
 
 Install dependencies:
 
-npm install
+  npm install
 
 Run the development server:
 
-npm run dev
+  npm run dev
 
 ---
 
