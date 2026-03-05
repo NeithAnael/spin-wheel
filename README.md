@@ -12,23 +12,28 @@ Perfect for store promotions, giveaways, holiday campaigns, and interactive cust
 
 You can see the project running here:
 
-(https://spinfortreats.vercel.app/)
+[https://spinfortreats.vercel.app/](https://spinfortreats.vercel.app/)
 ---
 
 # Installation
 
 Clone the repository:
 
-  git clone https://github.com/NeithAnael/spin-wheel.git
+```bash
+git clone https://github.com/NeithAnael/spin-wheel.git
+```
 
 Install dependencies:
 
-  npm install
+```bash
+npm install
+```
 
 Run the development server:
 
-  npm run dev
-
+```bash
+npm run dev
+```
 ---
 
 # Customization
@@ -38,30 +43,31 @@ Most of the customization for the wheel can be done from a single configuration 
 ## Theme Configuration
 
 Main configuration file:
-
+```ts
 spin-wheel/src/components/theme/wheelTheme.tsx
-
+```
 This file controls almost all visual and content aspects of the wheel, including:
 
-####• Title
-• Tagline
-• Background image
-• Wheel options and probabilities
-• Fonts and font weights
-• Wheel colors
-• Header and footer styling
-• Popup design
-• Button styling
+- *Title*
+- *Tagline*
+- *Background image*
+- *Wheel options and probabilities*
+- *Fonts and font weights*
+- *Wheel colors*
+- *Header and footer styling*
+- *Popup design*
+- *Button styling*
 
 Example configuration:
 
+```ts
 wheelOptions: [
 { option: "Try again", weight: 25 },
 { option: "10% OFF any purchase", weight: 12 },
 { option: "$10 OFF", weight: 12 },
 { option: "FREE RANDOM GIFT", weight: 5 }
 ]
-
+```
 The **weight** value determines the probability of each option appearing when the wheel spins.
 
 Higher weight = higher chance of landing on that option.
@@ -71,50 +77,50 @@ Higher weight = higher chance of landing on that option.
 # Background Images
 
 Background images are stored in:
-
+```ts
 spin-wheel/public/images
-
+```
 You can:
 
-• Use the default images included in the project
-• Add new images to this folder
-• Update the background in the theme configuration
+- *Use the default images included in the project*
+- *Add new images to this folder*
+- *Update the background in the theme configuration*
 
 Example:
-
+```ts
 backgroundImage: "/images/bg-xmas2.jpg"
-
+```
 Any image placed inside the `images` folder can be used as a background.
 
 ---
 
 # Wheel Styling
 
-Inside the theme file you can also modify:
+**Inside the theme file you can also modify:**
 
 ### Wheel Colors
 
-Slice background colors, text colors, borders, center circle color, and pointer color.
+- *Slice background colors, text colors, borders, center circle color, and pointer color.*
 
 ### Header & Footer
 
-Transparency, blur effects, borders, and text colors.
+- *Transparency, blur effects, borders, and text colors.*
 
 ### Popup
 
-Controls the appearance of the prize popup shown after spinning the wheel.
+- *Controls the appearance of the prize popup shown after spinning the wheel.*
 
 ### Buttons
 
-Customize button colors and hover effects.
+- *Customize button colors and hover effects.*
 
 ---
 
 # Built With
 
-React
-TypeScript
-Vite
+- React
+- TypeScript
+- Vite
 
 ---
 
