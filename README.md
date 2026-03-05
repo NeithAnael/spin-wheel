@@ -43,7 +43,7 @@ spin-wheel/src/components/theme/wheelTheme.tsx
 
 This file controls almost all visual and content aspects of the wheel, including:
 
-• Title
+####• Title
 • Tagline
 • Background image
 • Wheel options and probabilities
