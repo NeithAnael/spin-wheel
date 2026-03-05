@@ -1,7 +1,7 @@
 export const wheelTheme = {
-  title: "Christmas Roulette",
+  title: "Women's Day Roulette",
   tagline: "Every spin comes with a surprise.",
-  backgroundImage: "/images/bg-xmas2.jpg", 
+  backgroundImage: "/images/bg-womensday.jpg", 
 
    // ----- WHEEL -----
 wheelOptions: [
@@ -30,7 +30,7 @@ wheelOptions: [
     titleColor: "white",
     titleFontWeight: "600",
     taglineFontWeight: "400",
-    taglineColor: "#9c8b53",
+    taglineColor: "#54365a",
   },
   footer: {
     bg: "white/10",
@@ -48,26 +48,28 @@ wheelOptions: [
 
   // ----- WHEEL COLORS -----
   wheelColors: {
-    backgroundColors: ["#3f3f3f", "#e5e5e5", "#9c8b53", "#ffffff"],
+    backgroundColors: ["#d0a1e6", "#c7e9eb", "#9c5378", "#ffffff"],
     textColors: ["#ffffff", "#3f3f3f"],
-    borderColor: "#222222",
-    centerCircleColor: "#3f3f3f",
-    pointerColor: "#9c8b53",
+    borderColor: "#331041",
+    centerCircleColor: "#331041",
+    pointerColor: "#d0a1e6",
   },
 
   // ----- POPUP -----
   popup: {
-    background: "#9c8b53",
+    background: "#d0a1e6",
     textColor: "#ffffff",
-    borderColor: "#ffffff33",
+    borderColor: "#331041",
   },
 
   // ----- BUTTONS -----
   button: {
-    background: "#3f3f3f",
+    label: "Spin",
+    spinningLabel: "Spinning...",
+    background: "#d0a1e6",
     textColor: "#ffffff",
-    hoverBackground: "#9c8b53",
-  },
+    hoverBackground: "#331041",
+}
 };
 
 

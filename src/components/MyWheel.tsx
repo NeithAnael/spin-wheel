@@ -6,13 +6,12 @@ import { wheelTheme } from "@/components/theme/wheelTheme";
 
 interface WheelOption {
   option: string;
-  weight?: number; // Nuevo: peso opcional
+  weight?: number; 
 }
 
-// Convertimos wheelTheme.wheelOptions en formato con estilo
 const data = wheelTheme.wheelOptions.map((item: any, index: number) => ({
   option: typeof item === "string" ? item : item.option,
-  weight: typeof item === "string" ? 1 : item.weight ?? 1, // peso por defecto 1
+  weight: typeof item === "string" ? 1 : item.weight ?? 1, 
   style: {
     backgroundColor:
       wheelTheme.wheelColors.backgroundColors[
@@ -25,7 +24,6 @@ const data = wheelTheme.wheelOptions.map((item: any, index: number) => ({
   },
 }));
 
-// Función para elegir índice basado en peso
 function getWeightedRandomIndex(items: { weight: number }[]) {
   const totalWeight = items.reduce((sum, item) => sum + item.weight, 0);
   let random = Math.random() * totalWeight;
@@ -34,7 +32,7 @@ function getWeightedRandomIndex(items: { weight: number }[]) {
     if (random < items[i].weight) return i;
     random -= items[i].weight;
   }
-  return 0; // fallback
+  return 0; 
 }
 
 export default function CenteredWheel() {
@@ -78,13 +76,23 @@ export default function CenteredWheel() {
               fontSize={14}
             />
           </div>
-
+          
           <Button
-            className="mt-6"
+            className="mt-6 px-6 py-2 rounded-xl shadow-lg transition-all duration-200 hover:scale-105 active:scale-95"
+            style={{
+              backgroundColor: wheelTheme.button.background,
+              color: wheelTheme.button.textColor,
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = wheelTheme.button.hoverBackground)
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = wheelTheme.button.background)
+            }
             onClick={handleSpinClick}
             disabled={mustSpin}
           >
-            {mustSpin ? "Spinning..." : "Spin"}
+            {mustSpin ? wheelTheme.button.spinningLabel : wheelTheme.button.label}
           </Button>
         </div>
       </div>

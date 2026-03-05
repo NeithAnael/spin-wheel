@@ -1,73 +1,124 @@
-# React + TypeScript + Vite
+# Spin Wheel – React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable promotional spin wheel built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+It allows you to easily configure prizes, probabilities, colors, fonts, and backgrounds from a single theme file.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Perfect for store promotions, giveaways, holiday campaigns, and interactive customer experiences.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Live Demo
 
-## Expanding the ESLint configuration
+You can see the project running here:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+(https://spinfortreats.vercel.app/)
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Clone the repository:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+git clone https://github.com/NeithAnael/spin-wheel.git
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Run the development server:
+
+npm run dev
+
+---
+
+# Customization
+
+Most of the customization for the wheel can be done from a single configuration file.
+
+## Theme Configuration
+
+Main configuration file:
+
+spin-wheel/src/components/theme/wheelTheme.tsx
+
+This file controls almost all visual and content aspects of the wheel, including:
+
+• Title
+• Tagline
+• Background image
+• Wheel options and probabilities
+• Fonts and font weights
+• Wheel colors
+• Header and footer styling
+• Popup design
+• Button styling
+
+Example configuration:
+
+wheelOptions: [
+{ option: "Try again", weight: 25 },
+{ option: "10% OFF any purchase", weight: 12 },
+{ option: "$10 OFF", weight: 12 },
+{ option: "FREE RANDOM GIFT", weight: 5 }
+]
+
+The **weight** value determines the probability of each option appearing when the wheel spins.
+
+Higher weight = higher chance of landing on that option.
+
+---
+
+# Background Images
+
+Background images are stored in:
+
+spin-wheel/public/images
+
+You can:
+
+• Use the default images included in the project
+• Add new images to this folder
+• Update the background in the theme configuration
+
+Example:
+
+backgroundImage: "/images/bg-xmas2.jpg"
+
+Any image placed inside the `images` folder can be used as a background.
+
+---
+
+# Wheel Styling
+
+Inside the theme file you can also modify:
+
+### Wheel Colors
+
+Slice background colors, text colors, borders, center circle color, and pointer color.
+
+### Header & Footer
+
+Transparency, blur effects, borders, and text colors.
+
+### Popup
+
+Controls the appearance of the prize popup shown after spinning the wheel.
+
+### Buttons
+
+Customize button colors and hover effects.
+
+---
+
+# Built With
+
+React
+TypeScript
+Vite
+
+---
+
+# Notes
+
+The wheel behavior, prizes, and probabilities are fully controlled through the `wheelTheme.tsx` file, making it easy to adapt the component for different promotions, stores, or seasonal campaigns.
+
